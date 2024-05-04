@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { UsersContextProvider } from "@/contexts/users";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,9 +10,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="pt-BR" data-theme="cupcake">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="pt-BR" data-theme="cupcake">
+            <UsersContextProvider>
+                <body className={inter.className}>{children}</body>
+            </UsersContextProvider>
+        </html>
+    );
 }
