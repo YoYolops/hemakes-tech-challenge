@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --background-light-color: #d1d1d1;
 }
 
 body {
-    background-color: var(--background-light-color);
 }
 
 @layer utilities {
