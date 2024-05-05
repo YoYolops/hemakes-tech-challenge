@@ -49,5 +49,4 @@ export default function SearchBar({ setParentFilteredData }) {
             />
         </search>
     )
-
 }

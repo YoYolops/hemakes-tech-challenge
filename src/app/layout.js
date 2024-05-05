@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="pt-BR" data-theme="light">
             <UsersContextProvider>
-                <body className={inter.className}>{children}</body>
+                <body className={`${inter.className} flex flex-col items-center justidy-center bg-slate-100`}>{children}</body>
             </UsersContextProvider>
         </html>
     );
