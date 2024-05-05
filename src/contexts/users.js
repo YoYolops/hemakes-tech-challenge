@@ -6,15 +6,19 @@ import { mockUsersData } from "@/lib/factories";
 const UsersContext = createContext({});
 
 export function UsersContextProvider({ children }) {
+    const [ isLoadingData, setIsLoadingData ] = useState(true);
     const [ data, setData ] = useState([]);
 
     useEffect(() => {
-        setData([...mockUsersData(), ...getLocalStorageData()])
+        const localStorageData = getLocalStorageData();
+        setData(localStorageData.length ? localStorageData : mockUsersData())
+        setIsLoadingData(false)
     }, [])
 
     useEffect(() => {
-        setLocalStorageData(data)
-    }, [data])
+        if(!isLoadingData) setLocalStorageData(data);
+    }, [data, isLoadingData])
+
 
     function getAll() {
         return data;
@@ -30,11 +34,29 @@ export function UsersContextProvider({ children }) {
         setData((prevUserData) => [...prevUserData, newUser])
     }
 
+    function updateUser(newUserData) {
+        setData((prevUserData) => prevUserData.map((user) => {
+            if(user.id === newUserData.id) return {
+                ...user,
+                ...newUserData
+            }
+            return user;
+        }))
+    }
+
+    function findById(id) {
+        for(const user of data) {
+            if(user.id === id) return user;
+        }
+    }
+
     return (
         <UsersContext.Provider value={{
             getAll,
             deleteById,
-            add
+            add,
+            updateUser,
+            findById
         }}>
             { children }
         </UsersContext.Provider>

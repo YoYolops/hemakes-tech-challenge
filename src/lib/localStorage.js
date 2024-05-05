@@ -1,6 +1,4 @@
-const Config = Object.freeze({
-    APP_NAME: "HEMAKES_TECH_CHALLENGE"
-})
+import Config from "@/AppConfig";
 
 export function getLocalStorageData() {
     const foundData = JSON.parse(localStorage.getItem(Config.APP_NAME));

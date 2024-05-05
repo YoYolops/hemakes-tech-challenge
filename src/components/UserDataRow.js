@@ -1,5 +1,5 @@
 export default function UserDataRow({
-    id, name, company, role, verified, status, onDelete
+    id, name, company, role, verified, status, image, onDelete
 }) {
     return (
         <tr>
@@ -12,7 +12,7 @@ export default function UserDataRow({
                 <div className="flex items-center gap-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                            <img src={image} alt="User avatar" />
                         </div>
                     </div>
                     <div>
