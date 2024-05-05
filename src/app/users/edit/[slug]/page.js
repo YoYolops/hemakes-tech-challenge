@@ -48,12 +48,13 @@ export default function EditPage({ params }) {
     return (
         <UserDataForm 
             toggleVerified={toggleVerified}
-            updateData={updateData}
-            handleSetUpdateData={handleSetUpdateData}
+            data={updateData}
+            handleSetData={handleSetUpdateData}
+            submitAction={handleUpdate}
         >
             <a href="/users/list" className="btn btn-outline btn-warning w-[100px]">Cancel</a>
             <button onClick={handleDelete} className="btn btn-outline btn-error w-[100px]">Delete</button>
-            <button onClick={handleUpdate} className="btn btn-outline btn-success w-[100px]">Save</button>
+            <input type="submit" className="btn btn-outline btn-success w-[100px]" value="Save"/>
         </UserDataForm>
     )
 }

@@ -2,6 +2,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getLocalStorageData, setLocalStorageData } from "@/lib/localStorage";
 import { mockUsersData } from "@/lib/factories";
+import { v4 as uuidv4 } from 'uuid';
 
 const UsersContext = createContext({});
 
@@ -31,7 +32,7 @@ export function UsersContextProvider({ children }) {
     }
 
     function add(newUser) {
-        setData((prevUserData) => [...prevUserData, newUser])
+        setData((prevUserData) => [...prevUserData, {...newUser, id: uuidv4()}])
     }
 
     function updateUser(newUserData) {
