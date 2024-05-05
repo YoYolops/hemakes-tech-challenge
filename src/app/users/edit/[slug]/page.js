@@ -1,8 +1,8 @@
 "use client"
-import UsersContext from "@/contexts/users"
-import { useContext, useEffect, useState } from "react"
-import UserDataForm from "@/components/UserDataForm";
+import UsersContext from "@/contexts/users";
 import { useRouter } from 'next/navigation';
+import UserDataForm from "@/components/UserDataForm";
+import { useContext, useEffect, useState } from "react";
 
 export default function EditPage({ params }) {
     const router = useRouter();

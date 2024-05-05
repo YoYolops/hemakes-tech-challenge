@@ -25,8 +25,12 @@ export default function UserDataForm({
                     />
                 </label>
 
-                <select className="select select-primary w-full md:max-w-xs w-[100%]" required>
-                {data.role === "" && <option key="df-rol" disabled selected>Pick a role</option>}    
+                <select
+                    className="select select-primary w-full md:max-w-xs w-[100%]"
+                    onChange={(e) => handleSetData("role", e.target.value)}
+                    required
+                >
+                {data.role === "" && <option key="df-rol" disabled selected value="">Pick a role</option>}    
                 {
                     Config.ROLES_AVAILABLE.map((role) => 
                         <option key={role} value={role} selected={role === data.role}>{role}</option>
@@ -57,7 +61,7 @@ export default function UserDataForm({
                         onChange={e => handleSetData("status", e.target.value)}
                         required
                     >
-                    {data.status === "" && <option key="df-stat" disabled selected>Pick a status</option>}    
+                    {data.status === "" && <option key="df-stat" disabled selected value="">Pick a status</option>}    
                     {
                         Config.STATUS_AVAILABLE.map((status) => 
                             <option
@@ -73,7 +77,7 @@ export default function UserDataForm({
                         onChange={e => handleSetData("company", e.target.value)}
                         required
                     >
-                    {data.company === "" && <option key="df-comp" disabled selected>Pick a company:</option>}    
+                    {data.company === "" && <option key="df-comp" disabled selected value="">Pick a company:</option>}    
                     {
                         Config.COMPANIES_AVAILABLE.map((company) => 
                             <option 

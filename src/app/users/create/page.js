@@ -1,9 +1,12 @@
 "use client"
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import UsersContext from "@/contexts/users";
+import { useContext, useState } from "react";
 import UserDataForm from "@/components/UserDataForm";
 
-
 export default function CreatePage() {
+    const router = useRouter();
+    const Users = useContext(UsersContext);
     const [ newUserData, setNewUserData ] = useState({
         name: "",
         image: "",
@@ -21,12 +24,13 @@ export default function CreatePage() {
     }
 
     function toggleVerified() {
-        setUpdateData(prev => ({ ...prev, verified: !prev.verified }))
+        setNewUserData(prev => ({ ...prev, verified: !prev.verified }))
     }
 
     function handleUserCreation(e) {
         e.preventDefault();
-
+        Users.add(newUserData);
+        router.push("/users/list");
     }
 
     return (
@@ -34,6 +38,7 @@ export default function CreatePage() {
             data={newUserData}
             handleSetData={handleSetUpdateData}
             toggleVerified={toggleVerified}
+            submitAction={handleUserCreation}
         >
             <a href="/users/list" className="btn btn-outline btn-warning w-[100px]">Cancel</a>
             <input type="submit" className="btn btn-outline btn-success w-[100px]" value="Save"/>

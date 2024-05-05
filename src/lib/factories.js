@@ -4,7 +4,7 @@ export function mockUsersData() {
             id: "2e4f9850-5e65-4bcb-aa3d-d87c565fb02e",
             name: "Ann Spinka",
             image: "https://img.daisyui.com/tailwind-css-component-profile-2@56w.png",
-            company: "Windler Group",
+            company: "Youmake",
             role: "UI Designer",
             verified: false,
             status: "Banned"
@@ -13,7 +13,7 @@ export function mockUsersData() {
             id: "77a4a270-b346-4545-a51c-9385de6de9dd",
             name: "Danielle Russel",
             image: "https://img.daisyui.com/tailwind-css-component-profile-3@56w.png",
-            company: "Borer, Mills and O'Conner",
+            company: "Hemakes",
             role: "Hr Manager",
             verified: true,
             status: "Active"
