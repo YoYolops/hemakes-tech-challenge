@@ -1,5 +1,5 @@
 export default function UserDataRow({
-    name, company, role, verified, status
+    id, name, company, role, verified, status, onDelete
 }) {
     return (
         <tr>
@@ -27,7 +27,13 @@ export default function UserDataRow({
             <td>{verified ? "Yes" : "No"}</td>
             <td>{status}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">OOO</button>
+            <details className="dropdown">
+            <summary className="m-1 btn">OOO</summary>
+                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <li><a href={`/users/edit/${id}`}>Edit</a></li>
+                    <li onClick={onDelete}><a>Delete</a></li>
+                </ul>
+            </details>
             </th>
         </tr>
     )

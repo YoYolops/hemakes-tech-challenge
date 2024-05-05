@@ -5,9 +5,9 @@ import { useContext } from "react";
 
 export default function ListPage() {
     const Users = useContext(UsersContext);
-
+    
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto pb-8">
             <table className="table">
                 <thead>
                     <tr>
@@ -23,9 +23,11 @@ export default function ListPage() {
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    { Users.getAll().map((user) => <UserDataRow key={user.id} {...user}/>) }
-                </tbody>
+                <tbody className="">{
+                    Users.getAll().map((user) => 
+                        <UserDataRow key={user.id} {...user} onDelete={() => Users.deleteById(user.id)}/>
+                    ) 
+                }</tbody>
             </table>
         </div>
     )
