@@ -1,6 +1,7 @@
 export function mockUsersData() {
     return [
         {
+            id: "sbt-cnpq",
             name: "Ann Spinka",
             company: "Windler Group",
             role: "UI Designer",
@@ -8,6 +9,7 @@ export function mockUsersData() {
             status: "Banned"
         },
         {
+            id: "rosassaovermelhas",
             name: "Danielle Russel",
             company: "Borer, Mills and O'Conner",
             role: "Hr Manager",
