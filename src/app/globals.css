@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+html {
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    height: 100%;
+    width: 100%;
 }

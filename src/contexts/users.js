@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { getLocalStorageData, setLocalStorageData } from "@/lib/localStorage";
 import { mockUsersData } from "@/lib/factories";
 
-const UsersContext = createContext({ });
+const UsersContext = createContext({});
 
 export function UsersContextProvider({ children }) {
     const [ data, setData ] = useState([]);
