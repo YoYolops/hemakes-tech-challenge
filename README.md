@@ -1,4 +1,4 @@
-### Para rodar o peojeto
+### Para rodar o projeto
 
 São pré-requisitos:
 - NodeJS
