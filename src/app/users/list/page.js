@@ -1,13 +1,20 @@
 "use client"
 import UserDataRow from "@/components/UserDataRow"
 import UsersContext from "@/contexts/users";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import SearchBar from "@/components/SearchBar";
 
 export default function ListPage() {
+    const [ displayData, setDisplayData ] = useState([]);
     const Users = useContext(UsersContext);
     
+    useEffect(() => {
+        setDisplayData(Users.getAll())
+    }, [Users, setDisplayData])
+
     return (
         <div className="overflow-x-auto pb-8">
+            <SearchBar setParentFilteredData={setDisplayData}/>
             <table className="table">
                 <thead>
                     <tr>
@@ -24,7 +31,7 @@ export default function ListPage() {
                     </tr>
                 </thead>
                 <tbody className="">{
-                    Users.getAll().map((user) => 
+                    displayData.map((user) => 
                         <UserDataRow key={user.id} {...user} onDelete={() => Users.deleteById(user.id)}/>
                     ) 
                 }</tbody>

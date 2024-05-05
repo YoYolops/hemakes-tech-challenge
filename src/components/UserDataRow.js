@@ -28,7 +28,7 @@ export default function UserDataRow({
             <td>{status}</td>
             <th>
             <details className="dropdown dropdown-left dropdown-end">
-                <summary className="m-1 btn">OOO</summary>
+                <summary className="m-1 btn rotate-90">•••</summary>
                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                     <li><a href={`/users/edit/${id}`}>Edit</a></li>
                     <li onClick={onDelete}><a>Delete</a></li>
