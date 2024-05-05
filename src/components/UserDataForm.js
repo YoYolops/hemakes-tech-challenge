@@ -9,7 +9,7 @@ export default function UserDataForm({
 }) {
     return (
         <form 
-            className="flex flex-col items-center justify-center gap-25 p-8"
+            className="flex flex-col items-center justify-center gap-25 p-2"
             onSubmit={submitAction}
         >
             <div className="flex md:flex-row flex-col items-start justify-between gap-8 py-5 md:max-w-[600px] w-[100%]">
