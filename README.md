@@ -13,5 +13,7 @@ npm i &&
 npm run build &&
 npm start
 ```
+Depois disso, a aplicação estará rodando em http://localhost:3000
+
 # OBS:
 - Para mockar os dados iniciais, basta descomentar linha 16 e comentar linha 17 em src/contexts/user.js;
