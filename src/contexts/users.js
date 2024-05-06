@@ -12,7 +12,9 @@ export function UsersContextProvider({ children }) {
 
     useEffect(() => {
         const localStorageData = getLocalStorageData();
-        setData(localStorageData.length ? localStorageData : mockUsersData())
+        // To see app with mocked data, uncomment line 16 and comment 17
+        // setData(localStorageData.length ? localStorageData : mockUsersData())
+        setData(localStorageData)
         setIsLoadingData(false)
     }, [])
 

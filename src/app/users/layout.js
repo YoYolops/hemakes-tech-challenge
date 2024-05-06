@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
                 </a>
             </div>
 
-            <div className="bg-white p-3 rounded-xl shadow-2xl">
+            <div className="bg-white p-3 rounded-xl shadow-2xl max-h-[500px] overflow-auto">
                 {children}
             </div>
         </main>

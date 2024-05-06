@@ -39,7 +39,7 @@ export default function SearchBar({ setParentFilteredData }) {
     }
 
     return (
-        <search>
+        <search className="sticky top-0 z-50 shadow-lg">
             <input
                 ref={inputRef}
                 type="text"
